@@ -101,7 +101,7 @@ Uno de los problemas del análisis multicriterio es que ocurre una compensación
 
 Si le damos distintos pesos a esas variables y con eso "puntuamos" la idoneidad de una lista de personas para entrar en nuestro equipo, puede darse la situación de que una persona tenga alta puntuación final aún teniendo los tobillos débiles. Eso implica tomar una decisión equivocada puesto que estaríamos incluyendo en el equipo a una persona que no rendiría bien. Esta situación denota que hay criterios que no solo tienen más peso que otros, sino que además deben satisfacerse **necesariamente** para tomar una decisión acertada. Y esto nos lleva a la segunda técnica de análisis de la decisión:
 
-## Operadores lógicos
+### Operadores lógicos
 
 En esta segunda técnica no se asignan pesos a los criterios que combinamos sino que se establecen condiciones que deben cumplir los lugares de nuestra zona de estudio para ser idoneos según el objetivo del proceso decisiona en cuestión. Volviendo al ejemplo del jugador de baloncesto ideal, diríamos algo así: debe de tener los tobillos fuertes **y** **o bien** ser fuerte **o bien** ser alto. De alguna forma estamos diciendo que hay una condición **necesaria** para ser buen jugador, pero no suficiente. Necesita tener los tobillos resistentes y luego una de las otras dos condiciones. Esta forma de combinar criterios decisionales recibe el nombre de integración mediante operadores booleanos porque implican el uso de las conjunciones **o** e **y**. 
 
@@ -117,17 +117,17 @@ Para implementar esta operación en un SIG, usamos dos operadores matemáticos m
 
 La siguiente figura muestra el funcionamiento de estos operadores:
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_ecoinf_ugr/raw/2022-2023/imagenes/operadores_booleanos.png" alt="imagen" style="zoom:40%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/operadores_booleanos.png" alt="imagen" style="zoom:40%;" />
 
 Para aplicar estos operadores a nuestras capas, puedes usar el comando [mosaic de SAGA](https://gis.stackexchange.com/questions/150312/combining-multiple-overlapping-rasters-retain-maximum-value). Este comando está disponible en QGIS. 
 
 Los operadores anteriores son un poco "rígidos" dado que solo seleccionan los valores extremos (mínimo o máximo). Para suavizar el resultado se pueden usar otros operadores como los mostrados en la siguiente figura:
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_ecoinf_ugr/raw/2022-2023/imagenes/operadores_difusos.png" alt="imagen" style="zoom:40%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/operadores_difusos.png" alt="imagen" style="zoom:40%;" />
 
 
 
-## Reclasificación de los resultados obtenidos
+### Reclasificación de los resultados obtenidos
 
 Tras aplicar cualquiera de las técnicas anteriores obtendremos un mapa con valores de aptitud que van de 0 a 1. Este mapa puede ser muy útil para comprender mejor el proceso socioecológico en el que estamos trabajando. Pero normalmente cuando se toman decisiones es necesario seleccionar una serie de zonas concretas en las que se va a realizar una actuación determinada. Por eso es útil simplificar el mapa resultante para elegir solo los lugares (=píxeles) que resulten más idoneos para nuestro objetivo. El resto los descartaremos porque no reunen los requisitos que hemos impuesto. Para hacer esta selección aplicaremos una operación muy común en análisis raster: [reclasificación](https://docs.qgis.org/3.4/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#qgisreclassifybytable). Consiste en reducir la diversidad de valores de un raster asigando nuevos en función de un rango. Por ejemplo, asignaremos el valor de 1 a todos los píxeles que tengan una aptitud igual o mayor de 0.8. Para hacer esto, construimos una tabla de reclasificación.
 
@@ -142,7 +142,19 @@ Para reclasificar una capa rastser en QGIS, buscamos el algoritmo "reclassify by
 | 0.9 | 1|1|
  - _reclassified raster_ (capa de salida): _apt\_final\_re.tif_
 
+## Técnicas de agrupación de variables
 
+Este conjunto de técnicas consiste en una serie de algoritmos que permiten clasificar una serie de variables y crear grupos de elementos que tienen características parecidas. El término "clasificación" es el más comunmente utilizado en estos casos. 
+
+Se trata de crear grupos de elementos que tienen características parecidas en virtud de una serie de variables. En nuestro caso, la idea es seleccionar lugares (píxeles o polígonos) que son parecidos desde el punto de vista de las variables ambientales estudiadas. Las técnicas de clasificación hacen estos grupos teniendo en cuenta las similitudes entre los elementos a agrupar. Para ello es necesario definir un umbral de similitud. Es decir, se trata de agrupar elementos en función de cómo de similares son entre sí con respecto a una serie de variables.
+
+En nuestro caso la agrupación de las variables tiene consecuencias espaciales porque cada uno de los puntos del territorio (píxeles o polígonos) están espacialmente referenciados. Por tanto, el resultado de la agrupación será un mapa.
+
+El siguiente esquema muestra gráficamente la filosofía de esta técnica. No obstante, hay mucha información disponible en internet. Basta con buscar *K-means* (que es una de las técnicas más comunes) o clasificación supervisada.
+
+![tipos](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/blob/main/imagenes/clustering.png?raw=true)
+
+A la izquierda 
 
 # Lecturas complementarias
 
