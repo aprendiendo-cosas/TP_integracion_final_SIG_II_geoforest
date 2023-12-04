@@ -27,13 +27,26 @@ Esta sesión se organiza en torno al siguiente hilo argumental:
   + Álgebra de mapas: Se trata de un conjunto de técnicas que permiten combinar mapas procedentes de formatos diversos para resolver un problema de ubicación en el espacio de una actividad dada (en nuestro caso ubicación de las zonas con más regeneración).
   + Métodos basados en procesos: Consisten en simular el funcionamiento íntimo de los procesos elementales implicados en la pregunta en cuestión. 
 
-+ 
+
+El siguiente esquema muestra las técnicas anteriores de manera más gráfica.
 
 
-En [esta](https://github.com/aprendiendo-cosas/integracion_final_ecoinf_ugr/raw/2022-2023/presentacion/presentacion_agregacion.pptx) presentación se resumen los conceptos anteriores. 
+
+![tipos](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/blob/main/imagenes/tipos_metodos.png?raw=true)
 
 
-Las siguientes secciones describen brevemente las dos técnicas de integración que hemos visto: evaluación multicriterio e integración mediante operadores booleanos. Antes describiremos el paso previo común a ambas: transformar los mapas de variables en mapas de criterios:
+
+En nuestro caso no podemos hacer experimentos porque no tenemos recursos económicos ni tiempo. Tampoco podemos realizar modelos basados en procesos porque no disponemos del conocimiento necesario ni del tiempo para adquirirlo (tampoco es el objetivo de esta asignatura). Así que, trataremos de responder a la pregunta inicial que nos hacemos en la asignatuar usando técnicas empíricas que tienen en cuenta el conocimiento experto y otras aproximaciones más "difusas" que las otras mostradas en el esquema.
+
+
+
+
+
+
+
+
+
+
 
 
 
