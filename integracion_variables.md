@@ -4,7 +4,7 @@
 > + **_Versión_**: 2023-2024
 > + **_Asignatura_** : SIG II (Máster GEOFOREST). 
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
-> + **_Duración_**: 4 horas.
+> + **_Duración_**: 1 hora.
 
 
 
@@ -13,7 +13,7 @@
 Esta actividad tiene los siguientes objetivos de aprendizaje:
 
 + Entender que hay otras técnicas diferentes a la estadística correlacional para entender (y modelar) la naturaleza. 
-+ Aprender que estas otras técnicas (evaluación multicriterio, integración booleana de variables, etc.) tienen, como todas las técnicas, ventajas e inconvenientes.
++ Aprender que estas otras técnicas (evaluación multicriterio, integración booleana de variables, etc.) tienen, como todo, ventajas e inconvenientes.
 + Aprender técnicas de integración de datos relacionados con la asistencia a la toma de decisiones. 
 
 
@@ -21,17 +21,21 @@ Esta actividad tiene los siguientes objetivos de aprendizaje:
 ## Hilo argumental
 
 Esta sesión se organiza en torno al siguiente hilo argumental:
-+ Enumeración de los factores ecológicos y socioeconómicos que nos permiten responder a la pregunta inicialmente planteada en esta asignatura.
-+ Descripción de los tipos de modelos que usamos para mejorar nuestra comprensión de la naturaleza: 
++ Enumeración de los factores ecológicos y socioeconómicos que nos permiten responder a la pregunta inicialmente planteada en esta asignatura. Esta fase es clave porque en ella realizamos un proceso de abstracción o de modelización de la realidad: es necesario entender bien el problema de gestión o científico que queremos resolver para identificar adecuadamente las variables involucradas en el mismo. 
++ Identificación del tipo de problema que estamos tratando de resolver y evaluació de la disponibilidad de datos (y de herramientas analíticas) para su abordaje. Algunas preguntas o problemas pueden ser resueltos con técnicas correlacionales (establecer relaciones entre variables dependientes e independientes), mientras que otras requieren una aproximación más mecanicista (simular los procesos socioecológicos implicados). En otras ocasiones no disponemos de tiempo o de datos para hacer nada de lo anterior. En esos casos debemos de recurrir a técnicas en las que el conocimiento experto tiene más importancia. De forma algo más detallada, disponemos de los siguientes grandes grupos de técnicas analíticas:
   + Métodos estadísticos: se trata de encontrar una función matemática que explique correctamente cómo cambia la variable dependiente (regeneración de encina bajo el pinar) en función de las múltiples variables independientes. Esta aproximación es la tradicional.
   + Álgebra de mapas: Se trata de un conjunto de técnicas que permiten combinar mapas procedentes de formatos diversos para resolver un problema de ubicación en el espacio de una actividad dada (en nuestro caso ubicación de las zonas con más regeneración).
   + Métodos basados en procesos: Consisten en simular el funcionamiento íntimo de los procesos elementales implicados en la pregunta en cuestión. 
+
++ 
 
 
 En [esta](https://github.com/aprendiendo-cosas/integracion_final_ecoinf_ugr/raw/2022-2023/presentacion/presentacion_agregacion.pptx) presentación se resumen los conceptos anteriores. 
 
 
 Las siguientes secciones describen brevemente las dos técnicas de integración que hemos visto: evaluación multicriterio e integración mediante operadores booleanos. Antes describiremos el paso previo común a ambas: transformar los mapas de variables en mapas de criterios:
+
+
 
 ## Transformación de variable a criterio
 
@@ -136,3 +140,13 @@ Además de lo visto en clase, os paso la siguiente información que puede result
   + [Artículo](https://github.com/aprendiendo-cosas/integracion_final_ecoinf_ugr/raw/2022-2023/biblio/ecological_corridors_multicriteria.pdf) que describe cómo la conectividad ecológica del paisaje usando evaluación multicriterio.
   + [Informe](https://github.com/aprendiendo-cosas/integracion_final_ecoinf_ugr/raw/2022-2023/biblio/memoria_apicola_2004.pdf) de la REDIAM que describe cómo se hizo el mapa de aprovechamientos apícolas de Andalucía usando la técnica de la evaluación multicriterio. 
 
+
+
+
+
+# Vídeo de la sesión
+
+Este vídeo muestra los contenidos comentados durante la sesión del día 24 de noviembre. 
+
+
+<iframe width="560" height="515" src="https://www.youtube.com/embed/teqT3d6G8E4?si=WYVQ-H-rQ0_8VYfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
