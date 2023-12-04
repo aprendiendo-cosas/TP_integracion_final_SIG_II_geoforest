@@ -36,9 +36,16 @@ El siguiente esquema muestra las técnicas anteriores de manera más gráfica.
 
 
 
-En nuestro caso no podemos hacer experimentos porque no tenemos recursos económicos ni tiempo. Tampoco podemos realizar modelos basados en procesos porque no disponemos del conocimiento necesario ni del tiempo para adquirirlo (tampoco es el objetivo de esta asignatura). Así que, trataremos de responder a la pregunta inicial que nos hacemos en la asignatuar usando técnicas empíricas que tienen en cuenta el conocimiento experto y otras aproximaciones más "difusas" que las otras mostradas en el esquema.
+En nuestro caso no podemos hacer experimentos porque no tenemos recursos económicos ni tiempo. Tampoco podemos realizar modelos basados en procesos porque no disponemos del conocimiento necesario ni del tiempo para adquirirlo (tampoco es el objetivo de esta asignatura). Así que, trataremos de responder a la pregunta inicial que nos hacemos en la asignatuar usando técnicas empíricas que tienen en cuenta el conocimiento experto y otras aproximaciones más "difusas" que las otras mostradas en el esquema. Más específicamente usaremos las siguientes técnicas:
 
+- Técnicas de superposición y combinación de variables: Estos métodos consisten en "unir" las distintas variables implicadas en un proceso o problema concreto usando justificaciones o razonamientos relacionados con el conocimiento experto. Se trata, por tanto, de "proyectar" en un procedimiento matemático el conocimiento que una o varias personas tienen sobre un problema o proceso concreto. Estas técnicas son muy fáciles de implementar, ya que implican operaciones matemáticas sencillas. Su principal desventaja es que son muy dependientes del conocimiento experto. De modo que si este está sesgado o es incorrecto, también lo serán los resultados obtenidos. Para reducir esta fuente de error se suelen aplicar usando colectivos de personas con distintas "versiones" del conocimiento experto. En esta asignatura utilizaremos estas dos técnicas:
 
+  - Evaluación multicriterio: Agregación de variables mediante pesos.
+  - Operadores lógicos: Agregación de variables mediante operadores.
+
+- Técnicas de agrupación de variables:
+
+  
 
 
 
@@ -98,7 +105,7 @@ Uno de los problemas del análisis multicriterio es que ocurre una compensación
 
 Si le damos distintos pesos a esas variables y con eso "puntuamos" la idoneidad de una lista de personas para entrar en nuestro equipo, puede darse la situación de que una persona tenga alta puntuación final aún teniendo los tobillos débiles. Eso implica tomar una decisión equivocada puesto que estaríamos incluyendo en el equipo a una persona que no rendiría bien. Esta situación denota que hay criterios que no solo tienen más peso que otros, sino que además deben satisfacerse **necesariamente** para tomar una decisión acertada. Y esto nos lleva a la segunda técnica de análisis de la decisión:
 
-## Operadores booleanos
+## Operadores lógicos
 
 En esta segunda técnica no se asignan pesos a los criterios que combinamos sino que se establecen condiciones que deben cumplir los lugares de nuestra zona de estudio para ser idoneos según el objetivo del proceso decisiona en cuestión. Volviendo al ejemplo del jugador de baloncesto ideal, diríamos algo así: debe de tener los tobillos fuertes **y** **o bien** ser fuerte **o bien** ser alto. De alguna forma estamos diciendo que hay una condición **necesaria** para ser buen jugador, pero no suficiente. Necesita tener los tobillos resistentes y luego una de las otras dos condiciones. Esta forma de combinar criterios decisionales recibe el nombre de integración mediante operadores booleanos porque implican el uso de las conjunciones **o** e **y**. 
 
