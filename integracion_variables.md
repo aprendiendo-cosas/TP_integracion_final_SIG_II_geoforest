@@ -1,10 +1,10 @@
 # Técnicas de agregación de variables ambientales
 
 
-> + **_Versión_**: 2022-2023
-> + **_Asignatura (titulación)_**: Ciclo de gestión del dato: ecoinformática (máster conservación, gestión y restauración de la biodiversidad. UGR). 
+> + **_Versión_**: 2023-2024
+> + **_Asignatura_** : SIG II (Máster GEOFOREST). 
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
-> + **_Duración_**: Una sesión de dos horas
+> + **_Duración_**: 4 horas.
 
 
 
@@ -12,7 +12,8 @@
 
 Esta actividad tiene los siguientes objetivos de aprendizaje:
 
-+ Conocer los grandes tipos de herramientas que utilizamos para conocer mejor el funcionamiento de los sistemas naturales.
++ Entender que hay otras técnicas diferentes a la estadística correlacional para entender (y modelar) la naturaleza. 
++ Aprender que estas otras técnicas (evaluación multicriterio, integración booleana de variables, etc.) tienen, como todas las técnicas, ventajas e inconvenientes.
 + Aprender técnicas de integración de datos relacionados con la asistencia a la toma de decisiones. 
 
 
