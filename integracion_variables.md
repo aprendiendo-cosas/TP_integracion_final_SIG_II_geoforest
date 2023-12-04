@@ -32,7 +32,7 @@ El siguiente esquema muestra las técnicas anteriores de manera más gráfica.
 
 
 
-![tipos](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/blob/main/imagenes/tipos_metodos.png?raw=true)
+![tipos](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/blob/2023_2024/imagenes/tipos_metodos.png?raw=true)
 
 
 
@@ -66,9 +66,9 @@ La función de transformación puede tener formas diferentes. En nuestro caso as
 
 
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/funcion_pertenencia_directa.png" alt="imagen" style="zoom:25%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/imagenes/funcion_pertenencia_directa.png" alt="imagen" style="zoom:25%;" />
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/funcion_pertenencia_inversa.png" alt="imagen" style="zoom:25%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/imagenes/funcion_pertenencia_inversa.png" alt="imagen" style="zoom:25%;" />
 
 
 
@@ -92,7 +92,7 @@ El proceso de integración se hace fácilmente con la calculadora de mapas de QG
 ```
 La siguiente imagen muestra el método con otro ejemplo diferente:
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/pesos_ponderados.png" alt="imagen" style="zoom:40%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/imagenes/pesos_ponderados.png" alt="imagen" style="zoom:40%;" />
 
 Uno de los problemas del análisis multicriterio es que ocurre una compensación de criterios. Si una variable tiene un valor muy alto en un lugar determinado, puede que el resultado final en ese punto sea alto aunque el valor de un criterio importante en ese punto sea bajo. Esto puede hacer que lugares no adecuados sean etiquetados como sí adecuados. Un ejemplo que ilustra esta situación: imaginemos que queremos montar un equipo de baloncesto. Un buen jugador de baloncesto ha de tener las siguientes características:
 + Altura.
@@ -117,13 +117,13 @@ Para implementar esta operación en un SIG, usamos dos operadores matemáticos m
 
 La siguiente figura muestra el funcionamiento de estos operadores:
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/operadores_booleanos.png" alt="imagen" style="zoom:40%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/imagenes/operadores_booleanos.png" alt="imagen" style="zoom:40%;" />
 
 Para aplicar estos operadores a nuestras capas, puedes usar el comando [mosaic de SAGA](https://gis.stackexchange.com/questions/150312/combining-multiple-overlapping-rasters-retain-maximum-value). Este comando está disponible en QGIS. 
 
 Los operadores anteriores son un poco "rígidos" dado que solo seleccionan los valores extremos (mínimo o máximo). Para suavizar el resultado se pueden usar otros operadores como los mostrados en la siguiente figura:
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/operadores_difusos.png" alt="imagen" style="zoom:40%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/imagenes/operadores_difusos.png" alt="imagen" style="zoom:40%;" />
 
 
 
@@ -152,21 +152,27 @@ En nuestro caso la agrupación de las variables tiene consecuencias espaciales p
 
 El siguiente esquema muestra gráficamente la filosofía de esta técnica. No obstante, hay mucha información disponible en internet. Basta con buscar *K-means* (que es una de las técnicas más comunes) o clasificación supervisada.
 
-![tipos](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/blob/main/imagenes/clustering.png?raw=true)
+![tipos](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/blob/2023_2024/imagenes/clustering.png?raw=true)
 
-A la izquierda 
+A la izquierda se representan dos variables espacializadas (abajo) y el valor de una serie de puntos (numerados del 1 al 10) en función de las dos variables (gráfica superior izquierda). La clasificación consiste en construir grupos de puntos que tienen unas caracteríticas parecidas desde el punto de vista de las dos variables consideradas. Esta clasificación implica establecer similitudes entre los puntos (gráfica de arriba a la derecha). Además, esa clasificación se traduce en un mapa que muestra la distribución de las zonas homogéneas. Para cada conjunto de puntos se pueden definir un número ilimitado de agrupaciones diferentes. Las técnicas utilizadas para hacer la agrupación permiten seleccionar la más adecuada usando criterios estadísticos.
 
-# Lecturas complementarias
+Para hacer clasificaciones como las descritas anteriormente se pueden usar muchas herramientas diferentes. Es posible hacerlas en QGIS y también en R, donde hay multitud de paquetes específicamente diseñados para ello. A la hora de elegir una herramienta para hacer este procedimiento, es importante que utilice de manera explícita la componente espacial. Es decir, que la herramienta pueda hacer un agrupamiento geográfico. O dicho de otra forma, que proyecte el agrupamiento al territorio. Y aquí lo dejamos. Si queréis experimentar con estas herramientas, tenéis muchas a vuestro alcance. Para encontrarlas basta con usar las palabras clave *clustering* o *k-means*.
 
-Además de lo visto en clase, os paso la siguiente información que puede resultar de utilidad:
 
-+ [Artículo](https://github.com/aprendiendo-cosas/integracion_final_ecoinf_ugr/raw/2022-2023/biblio/modelos_ecologicos.pdf) que describe distintos tipos de modelos ecológicos. Incide en alguno de los conceptos descritos en la sesión final de nuestra asignatura. 
-+ [Resumen](https://github.com/aprendiendo-cosas/integracion_final_ecoinf_ugr/raw/2022-2023/biblio/herramientas_apoyo_decisiones.pdf) de mi tesis (año 2003, no os riais de los esquemas, por favor. En esa época no existía R). En el texto se describen los conceptos generales sobre integración de información ambiental usando técnicas de operadores booleanos. He recortado solo la parte interesante. Eso hace que el texto no sea muy fluido porque faltan secciones.
+
+## Lecturas complementarias
+
+Además de lo visto anteriormente, os paso la siguiente información que puede resultar de utilidad:
+
++ [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/biblio/modelos_ecologicos.pdf) que describe distintos tipos de modelos ecológicos. Incide en alguno de los conceptos descritos en la sesión final de nuestra asignatura. 
++ [Resumen](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/biblio/herramientas_apoyo_decisiones.pdf) de mi tesis (año 2003, no os riais de los esquemas, por favor. En esa época no existía R). En el texto se describen los conceptos generales sobre integración de información ambiental usando técnicas de operadores booleanos. He recortado solo la parte interesante. Eso hace que el texto no sea muy fluido porque faltan secciones.
 + Varios textos sobre análisis multicriterio:
-  + [Artículo](https://github.com/aprendiendo-cosas/integracion_final_ecoinf_ugr/raw/2022-2023/biblio/multicriterio_seleccion_zonas_plantas_electricas.pdf) sobre el uso del análisis multicriterio para localizar plantas de producción fotovoltaica. 
-  + [Interesante](https://github.com/aprendiendo-cosas/integracion_final_ecoinf_ugr/raw/2022-2023/biblio/MCE_review.pdf) revisión del uso de las técnicas multicriterio en cuestiones de conservación de la naturaleza. Muy recomendable este trabajo.
-  + [Artículo](https://github.com/aprendiendo-cosas/integracion_final_ecoinf_ugr/raw/2022-2023/biblio/ecological_corridors_multicriteria.pdf) que describe cómo la conectividad ecológica del paisaje usando evaluación multicriterio.
-  + [Informe](https://github.com/aprendiendo-cosas/integracion_final_ecoinf_ugr/raw/2022-2023/biblio/memoria_apicola_2004.pdf) de la REDIAM que describe cómo se hizo el mapa de aprovechamientos apícolas de Andalucía usando la técnica de la evaluación multicriterio. 
+  + [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/biblio/multicriterio_seleccion_zonas_plantas_electricas.pdf) sobre el uso del análisis multicriterio para localizar plantas de producción fotovoltaica. 
+  + [Interesante](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/biblio/MCE_review.pdf) revisión del uso de las técnicas multicriterio en cuestiones de conservación de la naturaleza. Muy recomendable este trabajo.
+  + [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/biblio/ecological_corridors_multicriteria.pdf) que describe cómo la conectividad ecológica del paisaje usando evaluación multicriterio.
+  + [Informe](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/biblio/memoria_apicola_2004.pdf) de la REDIAM que describe cómo se hizo el mapa de aprovechamientos apícolas de Andalucía usando la técnica de la evaluación multicriterio. 
+  + [Manual](https://geodacenter.github.io/workbook/9a_spatial1/lab9a.html) interesante sobre el uso de la clasificación espacialmente explícita.
+
 
 
 
