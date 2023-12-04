@@ -43,7 +43,7 @@ En nuestro caso no podemos hacer experimentos porque no tenemos recursos económ
   - Evaluación multicriterio: Agregación de variables mediante pesos.
   - Operadores lógicos: Agregación de variables mediante operadores.
 
-- Técnicas de agrupación de variables:
+- Técnicas de agrupación de variables: En estos métodos no hay un proceso real de integración, sino que se realiza ujna clasificación del territorio en función de los valores que tiene cada punto para cada una de las variables seleccionadas. Como cada variable puede tener valores continuos, los algoritmos que usamos aquí definen rangos para clasificar las variables y crear grupos (o cluster) de lugares (píxeles, polígonos) que tienen características similares. La siguiente imagen ejemplifica bien esta forma de proceder. Imaginemos que en un territorio determinado hay solo dos variables que consideramos importantes. Si representamos esas variables en 
 
   
 
