@@ -42,24 +42,20 @@ En nuestro caso no podemos hacer experimentos porque no tenemos recursos económ
 
   - Evaluación multicriterio: Agregación de variables mediante pesos.
   - Operadores lógicos: Agregación de variables mediante operadores.
-
 - Técnicas de agrupación de variables: En estos métodos no hay un proceso real de integración, sino que se realiza ujna clasificación del territorio en función de los valores que tiene cada punto para cada una de las variables seleccionadas. Como cada variable puede tener valores continuos, los algoritmos que usamos aquí definen rangos para clasificar las variables y crear grupos (o cluster) de lugares (píxeles, polígonos) que tienen características similares. La siguiente imagen ejemplifica bien esta forma de proceder. Imaginemos que en un territorio determinado hay solo dos variables que consideramos importantes. Si representamos esas variables en 
 
-  
+
+En las siguientes secciones se describen con más detalle los métodos anteriores.
 
 
+## Técnicas de superposición y combinación de variables
+
+Antes de describir las distintas técnicas de agregación, estudiaremos una condición importante que han de cumplir todas las variables para ser integradas con estos métodos:
 
 
+### Transformación de variable a criterio
 
-
-
-
-
-
-
-## Transformación de variable a criterio
-
-A lo largo de la asignatura hemos trabajado en la generación de mapas que muestran la distribución espacial de algunas variables biofísicas relevantes para nuestro caso de estudio: densidad de los pinares, diversidad (índice de Shannon), producción primaria, etc. Estas capas expresan la variable en cuestión usando unidades propias de la variable considerada (ej. árboles/hectárea). Además se pueden usar para multitud de situaciones diferentes. Es decir, un mapa de profundidad del suelo, por ejemplo, se puede usar para nuestro caso de estudio y para cualquier otro en el que el suelo sea relevante.
+A lo largo de la asignatura hemos trabajado en la generación de mapas que muestran la distribución espacial de algunas variables biofísicas relevantes para nuestro caso de estudio: severidad del incendio,, diversidad (índice de Shannon), producción primaria, etc. Estas capas expresan la variable en cuestión usando unidades propias de la variable considerada (ej. árboles/hectárea). Además se pueden usar para multitud de situaciones diferentes. Es decir, un mapa de profundidad del suelo, por ejemplo, se puede usar para nuestro caso de estudio y para cualquier otro en el que el suelo sea relevante.
 
 Pero cuando aplicamos a la variable un cierto criterio decisional debemos de transformar el mapa que representa la distribución espacial de dicha variable. Es decir, si queremos tener un mapa que muestre la distribución espacial de un criterio concreto, es necesario transformar la variable de la que partimos. Por ejemplo, imaginemos que queremos ubicar en el territorio un área recreativa. Y resulta que la densidad del bosque es determinante para esto: las zonas más densas no son adecuadas porque en ellas no caben las mesas del área recreativa. Así, en este caso, **al aumentar la densidad del bosque, se reduce la idoneidad para albergar áreas recreativas**. Sin embargo, en el ejemplo que nos ocupa ocurre lo contrario: **al aumentar la densidad aumenta la idoneidad** porque debemos de reducir la competencia intraespecífica en aquellos lugares en los que ésta es más intensa (más densidad). En el proceso de transformación de la *variable* a *criterio*, aplicamos una función de transformación. Esta función cumple dos objetivos:
 
@@ -70,19 +66,19 @@ La función de transformación puede tener formas diferentes. En nuestro caso as
 
 
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_ecoinf_ugr/raw/2022-2023/imagenes/funcion_pertenencia_directa.png" alt="imagen" style="zoom:25%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/funcion_pertenencia_directa.png" alt="imagen" style="zoom:25%;" />
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_ecoinf_ugr/raw/2022-2023/imagenes/funcion_pertenencia_inversa.png" alt="imagen" style="zoom:25%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/funcion_pertenencia_inversa.png" alt="imagen" style="zoom:25%;" />
 
 
 
 En los dibujos anteriores también puedes ver cómo calcular los parámetros de las funciones. Dado que una recta está definida por dos puntos, es fácil despejar los parámetros de la ecuación de la recta (pendiente y ordenada en el origen) a partir de los valores extremos (que toman valores 0 y 1 en el mapa de idoneidad).
 
 
-## Evaluación multicriterio
+### Evaluación multicriterio
 
-El análisis multicriterio es una técnica muy sencilla que permite conciliar en un mismo mapa criterios diferentes. Es una forma de espacializar criterios decisionales basados en conocimiento experto. Es decir, gracias a esta técnica podemos obtener mapas que recojan los criterios de un centro decisor concreto con relación a un aspecto determinado.  En nuestro ejemplo tenemos varios criterios y se trata de unificarlos en un único mapa que asigne un valor de aptitud global a cada punto ocupado por pinares de repoblación. Por ejemplo:
-+ Criterio de densidad: a más densidad más aptitud.
+El análisis multicriterio es una técnica muy sencilla que permite conciliar en un mismo mapa criterios diferentes. Es una forma de espacializar criterios decisionales basados en conocimiento experto. Es decir, gracias a esta técnica podemos obtener mapas que recojan los criterios de un centro decisor concreto con relación a un aspecto determinado.  En nuestro ejemplo tenemos varios criterios y se trata de unificarlos en un único mapa que asigne un valor de aptitud global a cada punto afectado por el incendio. Por ejemplo:
++ Criterio de intensidad del incendio: a más intensidad más aptitud.
 + Criterio de profundidad del suelo: a más profundidad más aptitud.
 + Criterio de distancia a manchas donadoras de semillas: A más distancia menos aptitud.
 
@@ -96,7 +92,7 @@ El proceso de integración se hace fácilmente con la calculadora de mapas de QG
 ```
 La siguiente imagen muestra el método con otro ejemplo diferente:
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_ecoinf_ugr/raw/2022-2023/imagenes/pesos_ponderados.png" alt="imagen" style="zoom:40%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/pesos_ponderados.png" alt="imagen" style="zoom:40%;" />
 
 Uno de los problemas del análisis multicriterio es que ocurre una compensación de criterios. Si una variable tiene un valor muy alto en un lugar determinado, puede que el resultado final en ese punto sea alto aunque el valor de un criterio importante en ese punto sea bajo. Esto puede hacer que lugares no adecuados sean etiquetados como sí adecuados. Un ejemplo que ilustra esta situación: imaginemos que queremos montar un equipo de baloncesto. Un buen jugador de baloncesto ha de tener las siguientes características:
 + Altura.
@@ -109,7 +105,7 @@ Si le damos distintos pesos a esas variables y con eso "puntuamos" la idoneidad 
 
 En esta segunda técnica no se asignan pesos a los criterios que combinamos sino que se establecen condiciones que deben cumplir los lugares de nuestra zona de estudio para ser idoneos según el objetivo del proceso decisiona en cuestión. Volviendo al ejemplo del jugador de baloncesto ideal, diríamos algo así: debe de tener los tobillos fuertes **y** **o bien** ser fuerte **o bien** ser alto. De alguna forma estamos diciendo que hay una condición **necesaria** para ser buen jugador, pero no suficiente. Necesita tener los tobillos resistentes y luego una de las otras dos condiciones. Esta forma de combinar criterios decisionales recibe el nombre de integración mediante operadores booleanos porque implican el uso de las conjunciones **o** e **y**. 
 
-En el ejemplo que nos ocupa, usaremos operadores lógicos para integrar las tres capas. Consideraremos que un lugar es adecuado para satisfaer nuestros objetivos si cumple un criterio específico y una combinación de los otros dos. Es decir, pondremos como criterio fundamental que los lugares adecuados tengan una **alta densidad de pinos**. Si no se cumple este criterio, nunca se podrá obtener un valor alto al final del proceso de integración de las variables. Los otros dos criterios serán optativos entre sí. Es decir, seleccionaremos como lugares adecuados aquellos que **o bien están cerca de una mancha de vegetación natural, o bien tienen suelos potencialmente húmedos**. Es decir, en conjunto aplicaremos los siguientes criterios concatenados: Un lugar es considerado como adecuado si:
+En el ejemplo que nos ocupa, usaremos operadores lógicos para integrar las tres capas. Consideraremos que un lugar es adecuado para satisfaer nuestros objetivos si cumple un criterio específico y una combinación de los otros dos. Es decir, pondremos como criterio fundamental que los lugares adecuados tengan una **alta severidad**. Si no se cumple este criterio, nunca se podrá obtener un valor alto al final del proceso de integración de las variables. Los otros dos criterios serán optativos entre sí. Es decir, seleccionaremos como lugares adecuados aquellos que **o bien están cerca de una mancha de vegetación natural, o bien tienen suelos potencialmente húmedos**. Es decir, en conjunto aplicaremos los siguientes criterios concatenados: Un lugar es considerado como adecuado si:
 
 + Tiene una alta densidad de pinos **Y**:
 + Está cerca de una mancha de vegetación natural **O** tiene suelos potencialmente húmedos. 
