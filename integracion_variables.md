@@ -27,12 +27,11 @@ Esta sesión se organiza en torno al siguiente hilo argumental:
   + Álgebra de mapas: Se trata de un conjunto de técnicas que permiten combinar mapas procedentes de formatos diversos para resolver un problema de ubicación en el espacio de una actividad dada (en nuestro caso ubicación de las zonas con más regeneración).
   + Métodos basados en procesos: Consisten en simular el funcionamiento íntimo de los procesos elementales implicados en la pregunta en cuestión. 
 
-
 El siguiente esquema muestra las técnicas anteriores de manera más gráfica.
 
 
 
-![tipos](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/blob/2023_2024/imagenes/tipos_metodos.png?raw=true)
+![tipos](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/blob/main/imagenes/tipos_metodos.png?raw=true)
 
 
 
@@ -53,9 +52,13 @@ En las siguientes secciones se describen con más detalle los métodos anteriore
 
 El siguiente esquema muestra de manera resumida las distintas fases que hemos de cumplir para aplicar estas técnicas que permiten la superposición de variables y que están muy relacionadas con la teoría de la decisión.
 
+![pasos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/refs/heads/main/imagenes/esquema_metodo.png)
 
 
-Antes de describir las distintas técnicas de agregación, estudiaremos una condición importante que han de cumplir todas las variables para ser integradas con estos métodos:
+
+Los tres primeros pasos de esta metodología ya han sido trabajados en sesiones anteriores. Describimos en la siguiente sección la transformación de las variables en criterios.
+
+
 
 
 ### Transformación de variable a criterio
@@ -67,20 +70,34 @@ Pero cuando aplicamos a la variable un cierto criterio decisional debemos de tra
 + Estandariza los valores de todos los mapas para usar un rango de 0 a 1 (o a veces de 0 a 255)
 + Transforma los valores de la variable (producción primaria, profundidad del suelo, etc.) a valores de idoneidad cualitativos.
 
-La función de transformación puede tener formas diferentes. En nuestro caso asumiremos que la relación entre cada variable y su criterio es lineal. Así que tendremos dos situaciones representadas por los dos dibujos que hay a continuación: Función de preferencia directa e inversa. 
+La función de transformación puede tener formas diferentes. En la siguiente figura se muestran algunos ejemplos:
+
+![tipos_funciones](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/refs/heads/main/imagenes/estandarizacion.jpg)
 
 
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/imagenes/funcion_pertenencia_directa.png" alt="imagen" style="zoom:25%;" />
-
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/imagenes/funcion_pertenencia_inversa.png" alt="imagen" style="zoom:25%;" />
+En nuestro caso asumiremos que la relación entre cada variable y su criterio es lineal. Así que tendremos dos situaciones representadas por los dos dibujos que hay a continuación: Función de preferencia (de transferencia o transformación) directa e inversa. 
 
 
+
+![transferencia](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/refs/heads/main/imagenes/funcion_pertenencia_lineal.png)
 
 En los dibujos anteriores también puedes ver cómo calcular los parámetros de las funciones. Dado que una recta está definida por dos puntos, es fácil despejar los parámetros de la ecuación de la recta (pendiente y ordenada en el origen) a partir de los valores extremos (que toman valores 0 y 1 en el mapa de idoneidad).
 
+Para aplicar la función resultante en cada variable a la capa correspondiente, usamos la calculadora raster. Para ello necesitamos saber los valores máximos y mínimos de cada una de las capas. En la pestaña de propiedades de cada capa de QGIS podemos ver fácilmente los valores máximos y mínimos. Luego, pondremos en la calculadora ráster la ecuación correspondiente. A continuación va un ejemplo:
 
-### Evaluación multicriterio
++ Mínimo: 0.008539155125618
++ Máximo: 6.4734792709351
++ Por tanto, la ecuación sería así:
+
+```python  
+  (1/(6.4734792709351-0.008539155125618))*"shannon@1" - (0.008539155125618/(6.4734792709351-0.008539155125618))
+```
+
+### Métodos de integración de variables.
+Estudiaremos los tres siguientes métodos
+
+#### Evaluación multicriterio
 
 El análisis multicriterio es una técnica muy sencilla que permite conciliar en un mismo mapa criterios diferentes. Es una forma de espacializar criterios decisionales basados en conocimiento experto. Es decir, gracias a esta técnica podemos obtener mapas que recojan los criterios de un centro decisor concreto con relación a un aspecto determinado.  En nuestro ejemplo tenemos varios criterios y se trata de unificarlos en un único mapa que asigne un valor de aptitud global a cada punto afectado por el incendio. Por ejemplo:
 + Criterio de intensidad del incendio: a más intensidad más aptitud.
@@ -97,7 +114,7 @@ El proceso de integración se hace fácilmente con la calculadora de mapas de QG
 ```
 La siguiente imagen muestra el método con otro ejemplo diferente:
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/imagenes/pesos_ponderados.png" alt="imagen" style="zoom:40%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/pesos_ponderados.png" alt="imagen" style="zoom:40%;" />
 
 Uno de los problemas del análisis multicriterio es que ocurre una compensación de criterios. Si una variable tiene un valor muy alto en un lugar determinado, puede que el resultado final en ese punto sea alto aunque el valor de un criterio importante en ese punto sea bajo. Esto puede hacer que lugares no adecuados sean etiquetados como sí adecuados. Un ejemplo que ilustra esta situación: imaginemos que queremos montar un equipo de baloncesto. Un buen jugador de baloncesto ha de tener las siguientes características:
 + Altura.
@@ -106,7 +123,7 @@ Uno de los problemas del análisis multicriterio es que ocurre una compensación
 
 Si le damos distintos pesos a esas variables y con eso "puntuamos" la idoneidad de una lista de personas para entrar en nuestro equipo, puede darse la situación de que una persona tenga alta puntuación final aún teniendo los tobillos débiles. Eso implica tomar una decisión equivocada puesto que estaríamos incluyendo en el equipo a una persona que no rendiría bien. Esta situación denota que hay criterios que no solo tienen más peso que otros, sino que además deben satisfacerse **necesariamente** para tomar una decisión acertada. Y esto nos lleva a la segunda técnica de análisis de la decisión:
 
-### Operadores lógicos
+#### Operadores lógicos
 
 En esta segunda técnica no se asignan pesos a los criterios que combinamos sino que se establecen condiciones que deben cumplir los lugares de nuestra zona de estudio para ser idoneos según el objetivo del proceso decisiona en cuestión. Volviendo al ejemplo del jugador de baloncesto ideal, diríamos algo así: debe de tener los tobillos fuertes **y** **o bien** ser fuerte **o bien** ser alto. De alguna forma estamos diciendo que hay una condición **necesaria** para ser buen jugador, pero no suficiente. Necesita tener los tobillos resistentes y luego una de las otras dos condiciones. Esta forma de combinar criterios decisionales recibe el nombre de integración mediante operadores booleanos porque implican el uso de las conjunciones **o** e **y**. 
 
@@ -122,17 +139,17 @@ Para implementar esta operación en un SIG, usamos dos operadores matemáticos m
 
 La siguiente figura muestra el funcionamiento de estos operadores:
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/imagenes/operadores_booleanos.png" alt="imagen" style="zoom:40%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/operadores_booleanos.png" alt="imagen" style="zoom:40%;" />
 
-Para aplicar estos operadores a nuestras capas, puedes usar el comando [mosaic de SAGA](https://gis.stackexchange.com/questions/150312/combining-multiple-overlapping-rasters-retain-maximum-value). Este comando está disponible en QGIS. 
+Para aplicar estos operadores a nuestras capas, puedes la calculadora de mapas de QGIS (funciones MIN y MAX). 
 
 Los operadores anteriores son un poco "rígidos" dado que solo seleccionan los valores extremos (mínimo o máximo). Para suavizar el resultado se pueden usar otros operadores como los mostrados en la siguiente figura:
 
-<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/imagenes/operadores_difusos.png" alt="imagen" style="zoom:40%;" />
+<img src="https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/imagenes/operadores_difusos.png" alt="imagen" style="zoom:40%;" />
 
 
 
-### Reclasificación de los resultados obtenidos
+#### Reclasificación de los resultados obtenidos
 
 Tras aplicar cualquiera de las técnicas anteriores obtendremos un mapa con valores de aptitud que van de 0 a 1. Este mapa puede ser muy útil para comprender mejor el proceso socioecológico en el que estamos trabajando. Pero normalmente cuando se toman decisiones es necesario seleccionar una serie de zonas concretas en las que se va a realizar una actuación determinada. Por eso es útil simplificar el mapa resultante para elegir solo los lugares (=píxeles) que resulten más idoneos para nuestro objetivo. El resto los descartaremos porque no reunen los requisitos que hemos impuesto. Para hacer esta selección aplicaremos una operación muy común en análisis raster: [reclasificación](https://docs.qgis.org/3.4/en/docs/user_manual/processing_algs/qgis/rasteranalysis.html#qgisreclassifybytable). Consiste en reducir la diversidad de valores de un raster asigando nuevos en función de un rango. Por ejemplo, asignaremos el valor de 1 a todos los píxeles que tengan una aptitud igual o mayor de 0.8. Para hacer esto, construimos una tabla de reclasificación.
 
@@ -147,7 +164,9 @@ Para reclasificar una capa rastser en QGIS, buscamos el algoritmo "reclassify by
 | 0.9 | 1|1|
  - _reclassified raster_ (capa de salida): _apt\_final\_re.tif_
 
-## Técnicas de agrupación de variables
+
+
+#### Técnicas de agrupación de variables
 
 Este conjunto de técnicas consiste en una serie de algoritmos que permiten clasificar una serie de variables y crear grupos de elementos que tienen características parecidas. El término "clasificación" es el más comunmente utilizado en estos casos. 
 
@@ -157,7 +176,7 @@ En nuestro caso la agrupación de las variables tiene consecuencias espaciales p
 
 El siguiente esquema muestra gráficamente la filosofía de esta técnica. No obstante, hay mucha información disponible en internet. Basta con buscar *K-means* (que es una de las técnicas más comunes) o clasificación supervisada.
 
-![tipos](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/blob/2023_2024/imagenes/clustering.png?raw=true)
+![tipos](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/blob/main/imagenes/clustering.png?raw=true)
 
 A la izquierda se representan dos variables espacializadas (abajo) y el valor de una serie de puntos (numerados del 1 al 10) en función de las dos variables (gráfica superior izquierda). La clasificación consiste en construir grupos de puntos que tienen unas caracteríticas parecidas desde el punto de vista de las dos variables consideradas. Esta clasificación implica establecer similitudes entre los puntos (gráfica de arriba a la derecha). Además, esa clasificación se traduce en un mapa que muestra la distribución de las zonas homogéneas. Para cada conjunto de puntos se pueden definir un número ilimitado de agrupaciones diferentes. Las técnicas utilizadas para hacer la agrupación permiten seleccionar la más adecuada usando criterios estadísticos.
 
@@ -169,13 +188,13 @@ Para hacer clasificaciones como las descritas anteriormente se pueden usar mucha
 
 Además de lo visto anteriormente, os paso la siguiente información que puede resultar de utilidad:
 
-+ [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/biblio/modelos_ecologicos.pdf) que describe distintos tipos de modelos ecológicos. Incide en alguno de los conceptos descritos en la sesión final de nuestra asignatura. 
-+ [Resumen](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/biblio/herramientas_apoyo_decisiones.pdf) de mi tesis (año 2003, no os riais de los esquemas, por favor. En esa época no existía R). En el texto se describen los conceptos generales sobre integración de información ambiental usando técnicas de operadores booleanos. He recortado solo la parte interesante. Eso hace que el texto no sea muy fluido porque faltan secciones.
++ [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/biblio/modelos_ecologicos.pdf) que describe distintos tipos de modelos ecológicos. Incide en alguno de los conceptos descritos en la sesión final de nuestra asignatura. 
++ [Resumen](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/biblio/herramientas_apoyo_decisiones.pdf) de mi tesis (año 2003, no os riais de los esquemas, por favor. En esa época no existía R ni siquiera QGIS). En el texto se describen los conceptos generales sobre integración de información ambiental usando técnicas de operadores booleanos. He recortado solo la parte interesante. Eso hace que el texto no sea muy fluido porque faltan secciones.
 + Varios textos sobre análisis multicriterio:
-  + [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/biblio/multicriterio_seleccion_zonas_plantas_electricas.pdf) sobre el uso del análisis multicriterio para localizar plantas de producción fotovoltaica. 
-  + [Interesante](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/biblio/MCE_review.pdf) revisión del uso de las técnicas multicriterio en cuestiones de conservación de la naturaleza. Muy recomendable este trabajo.
-  + [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/biblio/ecological_corridors_multicriteria.pdf) que describe cómo la conectividad ecológica del paisaje usando evaluación multicriterio.
-  + [Informe](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2023_2024/biblio/memoria_apicola_2004.pdf) de la REDIAM que describe cómo se hizo el mapa de aprovechamientos apícolas de Andalucía usando la técnica de la evaluación multicriterio. 
+  + [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/biblio/multicriterio_seleccion_zonas_plantas_electricas.pdf) sobre el uso del análisis multicriterio para localizar plantas de producción fotovoltaica. 
+  + [Interesante](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/biblio/MCE_review.pdf) revisión del uso de las técnicas multicriterio en cuestiones de conservación de la naturaleza. Muy recomendable este trabajo.
+  + [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/biblio/ecological_corridors_multicriteria.pdf) que describe cómo la conectividad ecológica del paisaje usando evaluación multicriterio.
+  + [Informe](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/main/biblio/Memoria_Apicola_2004.pdf) de la REDIAM que describe cómo se hizo el mapa de aprovechamientos apícolas de Andalucía usando la técnica de la evaluación multicriterio. 
 + [Manual](https://geodacenter.github.io/workbook/9a_spatial1/lab9a.html) interesante sobre el uso de la clasificación espacialmente explícita.
 
 
