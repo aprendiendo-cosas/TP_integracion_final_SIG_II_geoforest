@@ -199,14 +199,14 @@ Así que para decidir qué lugares son más adecuados para albergar un espacio p
 
 En la sesión anterior se identificaron una serie de variables potencialmente útiles para responder a la pregunta que nos ocupa. Estas variables se identificaron basándose en el criterio experto de los estudiantes y de la profesora Cristina:
 
-+ Diversidad. La diversidad biológica es importante para considerar una zona como potencialmente protegible. Se supone que es esa diversidad la que queremos proteger. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/shannon.tif) puedes descargar el mapa de diversidad de Andalucía. Y [aquí](https://raw.githack.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/main/guion_practica_mapa_biodiversidad.html) puedes ver cómo se obtuvo. 
++ Diversidad. La diversidad biológica es importante para considerar una zona como potencialmente protegible. Se supone que es esa diversidad la que queremos proteger. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/shannon.tif) puedes descargar el mapa de diversidad de Andalucía. 
 + Distancia a zonas urbanas. La distancia entre la zona protegida y los núcleos urbanos también es importante porque esto puede condicionar los posibles impactos al espacio protegido o el uso que se hace de este. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/dist_zona_urbana.tif) puedes descargar el mapa de distancias de cada punto de Andalucía a la zona urbana más cercana. 
 + Distancia a vías de comunicación. Igualmente, lo bien o mal comunicado que esté un espacio protegido condiciona tanto los impactos potenciales de la actividad humana como su posible uso por parte de la sociedad. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/dist_red_viaria.tif) puedes descargar el mapa de distancias de cada punto de Andalucía a la carretera más cercana. 
 + Efecto del cambio climático. Sabemos que el clima está cambiando. Quizás es importante tener en cuenta esta variable para diseñar nuestra red de espacios protegidos. Usaremos una capa que muestra la estimación de la desviación de temperatura media anual (en décimas de grado) para la década de 2090 a 2100. Esta capa se ha obtenido a partir de la [REDIAM](https://www.juntadeandalucia.es/medioambiente/portal/acceso-rediam) y puedes descargla [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/temp_futuro.tif). 
 
 Ahora debemos de transformar las variables en criterios:
 
-### Mapa de diversidad -> Aptitud con relación a la biodiversidad.
+#### Mapa de diversidad -> Aptitud con relación a la biodiversidad.
 Asumiremos una relación directa entre variable y aptitud. Es decir, a más diversidad mejor para nuestros objetivos (identificar sitios potencialmente protegibles). Sabemos que los valores máximos y mínimos del mapa de diversidad son (podemos verlos fácilmente en las propiedades de la capa, en QGIS)
 
 + Mínimo: 0.008539155125618
@@ -218,7 +218,7 @@ Asumiremos una relación directa entre variable y aptitud. Es decir, a más dive
 ```
 Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_shannon.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/apt_shannon.tif) puedes descargarlo. 
 
-### Distancia a zonas urbanas -> Aptitud con relación a la distancia a zonas urbanas.
+#### Distancia a zonas urbanas -> Aptitud con relación a la distancia a zonas urbanas.
 Asumiremos una relación directa entre variable y aptitud. Es decir, a más distancia mejor para nuestros objetivos (identificar sitios potencialmente protegibles). Justificamos esta afirmación diciendo que las zonas urbanas generan impactos importantes en los espacios protegidos y por tanto es mejor que estén lejos de ellas. Sabemos que los valores máximos y mínimos del mapa de distancias a zonas urbanas son (podemos verlos fácilmente en las propiedades de la capa, en QGIS)
 
 + Mínimo: 0
@@ -230,7 +230,7 @@ Asumiremos una relación directa entre variable y aptitud. Es decir, a más dist
 ```
 Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_dist_zona_urbana.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/apt_dist_zona_urbana.tif) puedes descargarlo. 
 
-### Distancia a la red viaria -> Aptitud con relación a la distancia a la red viaria.
+#### Distancia a la red viaria -> Aptitud con relación a la distancia a la red viaria.
 Asumiremos una relación inversa entre variable y aptitud. Es decir, a más distancia peor para nuestros objetivos (identificar sitios potencialmente protegibles). Justificamos esta afirmación diciendo que los espacios protegidos necesitan gestión y que para ello es importante que estén cerca de carreteras y caminos. Esto es muy cuestionable en realidad, pero lo hacemos así por fines docentes. Sabemos que los valores máximos y mínimos del mapa de distancias a carreteras son (podemos verlos fácilmente en las propiedades de la capa, en QGIS)
 
 + Mínimo: 0
@@ -244,7 +244,7 @@ Para aplicar esta función lineal basta con poner el código anterior en la calc
 
 
 
-### Aumento previsto de temperatura -> Aptitud con relación al impacto del cambio climático
+#### Aumento previsto de temperatura -> Aptitud con relación al impacto del cambio climático
 
 Asumiremos una relación inversa entre variable y aptitud. Es decir, a más aumento de temperatura respecto a la media de la serie histórica, menos aptitud para nuestro objetivo. Justificamos esta decisión porque nos interesa que los espacios protegidos estén en lugares poco afectados por el cambio climático.  Sabemos que los valores máximos y mínimos del mapa de distancias a carreteras son (podemos verlos fácilmente en las propiedades de la capa, en QGIS)
 
