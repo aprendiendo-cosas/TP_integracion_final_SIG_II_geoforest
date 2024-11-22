@@ -4,7 +4,7 @@
 > + **_Versión_**: 2024-2025
 > + **_Asignatura_** : SIG II (Máster GEOFOREST). 
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
-> + **_Duración_**: 1 hora.
+> + **_Duración_**: 3 horas.
 
 
 
@@ -63,7 +63,7 @@ Los tres primeros pasos de esta metodología ya han sido trabajados en sesiones 
 
 ### Transformación de variable a criterio
 
-A lo largo de la asignatura hemos trabajado en la generación de mapas que muestran la distribución espacial de algunas variables biofísicas relevantes para nuestro caso de estudio: severidad del incendio,, diversidad (índice de Shannon), producción primaria, etc. Estas capas expresan la variable en cuestión usando unidades propias de la variable considerada (ej. árboles/hectárea). Además se pueden usar para multitud de situaciones diferentes. Es decir, un mapa de profundidad del suelo, por ejemplo, se puede usar para nuestro caso de estudio y para cualquier otro en el que el suelo sea relevante.
+A lo largo de la asignatura hemos trabajado en la generación de mapas que muestran la distribución espacial de algunas variables biofísicas relevantes para nuestro caso de estudio: severidad del incendio, diversidad (índice de Shannon), producción primaria, etc. Estas capas expresan la variable en cuestión usando unidades propias de la variable considerada (ej. árboles/hectárea). Además se pueden usar para multitud de situaciones diferentes. Es decir, un mapa de profundidad del suelo, por ejemplo, se puede usar para nuestro caso de estudio y para cualquier otro en el que el suelo sea relevante.
 
 Pero cuando aplicamos a la variable un cierto criterio decisional debemos de transformar el mapa que representa la distribución espacial de dicha variable. Es decir, si queremos tener un mapa que muestre la distribución espacial de un criterio concreto, es necesario transformar la variable de la que partimos. Por ejemplo, imaginemos que queremos ubicar en el territorio un área recreativa. Y resulta que la densidad del bosque es determinante para esto: las zonas más densas no son adecuadas porque en ellas no caben las mesas del área recreativa. Así, en este caso, **al aumentar la densidad del bosque, se reduce la idoneidad para albergar áreas recreativas**. Sin embargo, en el ejemplo que nos ocupa ocurre lo contrario: **al aumentar la densidad aumenta la idoneidad** porque debemos de reducir la competencia intraespecífica en aquellos lugares en los que ésta es más intensa (más densidad). En el proceso de transformación de la *variable* a *criterio*, aplicamos una función de transformación. Esta función cumple dos objetivos:
 
@@ -183,6 +183,130 @@ A la izquierda se representan dos variables espacializadas (abajo) y el valor de
 Para hacer clasificaciones como las descritas anteriormente se pueden usar muchas herramientas diferentes. Es posible hacerlas en QGIS y también en R, donde hay multitud de paquetes específicamente diseñados para ello. A la hora de elegir una herramienta para hacer este procedimiento, es importante que utilice de manera explícita la componente espacial. Es decir, que la herramienta pueda hacer un agrupamiento geográfico. O dicho de otra forma, que proyecte el agrupamiento al territorio. Y aquí lo dejamos. Si queréis experimentar con estas herramientas, tenéis muchas a vuestro alcance. Para encontrarlas basta con usar las palabras clave *clustering* o *k-means*.
 
 
+
+## Ejemplo sencillo
+
+Partimos de una pregunta que no se puede resolver fácilmente con técnicas más "duras" (correlacional o modelización)
+
+> ¿Qué variables podemos utilizar para declarar una zona como espacio protegido?
+
+Responder a esta pregunta desde la lógica correlacional a la que estamos acostumbrados (variable dependiente y variables independientes que se relacionan) es imposible por varios motivos:
+
++ Hay demasiadas variables en la susceptiblidad de un territorio para ser útil desde el punto de vista de la protección de la naturaleza. No podemos contemplarlas todas.
++ Aunque consiguiéramos fijar algunas variables, no disponemos de la capacidad experimental necesaria para establecer relaciones entre las variables. Tendríamos que plantear un experimento en el que las distintas variables potencialmente explicativas (diversidad, distancia a núcleos urbanos, etc.) se manifestaran de manera similar en dos territorios: uno protegido y otro sin proteger. Esto es imposible.
+
+Así que para decidir qué lugares son más adecuados para albergar un espacio protegido debemos de buscar otros métodos de generar conocimiento. Estas aproximaciones, más difusas y flexibles que las que conocemos, nos permiten abordar problemas como el que nos ocupa. Podemos englobar estas técnicas bajo la denominación de "álgebra de mapas". Estos métodos consisten en "unir" las distintas variables implicadas en un proceso o problema concreto usando justificaciones o razonamientos relacionados con el conocimiento experto. Se trata, por tanto, de "proyectar" en un procedimiento matemático el conocimiento que una o varias personas tienen sobre un problema o proceso concreto. Estas técnicas son muy fáciles de implementar, ya que implican operaciones matemáticas sencillas. Su principal desventaja es que son muy dependientes del conocimiento experto. De modo que si este está sesgado o es incorrecto, también lo serán los resultados obtenidos. Para reducir esta fuente de error se suelen aplicar usando colectivos de personas con distintas "versiones" del conocimiento experto. 
+
+En la sesión anterior se identificaron una serie de variables potencialmente útiles para responder a la pregunta que nos ocupa. Estas variables se identificaron basándose en el criterio experto de los estudiantes y de la profesora Cristina:
+
++ Diversidad. La diversidad biológica es importante para considerar una zona como potencialmente protegible. Se supone que es esa diversidad la que queremos proteger. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/shannon.tif) puedes descargar el mapa de diversidad de Andalucía. Y [aquí](https://raw.githack.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/main/guion_practica_mapa_biodiversidad.html) puedes ver cómo se obtuvo. 
++ Distancia a zonas urbanas. La distancia entre la zona protegida y los núcleos urbanos también es importante porque esto puede condicionar los posibles impactos al espacio protegido o el uso que se hace de este. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/dist_zona_urbana.tif) puedes descargar el mapa de distancias de cada punto de Andalucía a la zona urbana más cercana. 
++ Distancia a vías de comunicación. Igualmente, lo bien o mal comunicado que esté un espacio protegido condiciona tanto los impactos potenciales de la actividad humana como su posible uso por parte de la sociedad. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/dist_red_viaria.tif) puedes descargar el mapa de distancias de cada punto de Andalucía a la carretera más cercana. 
++ Efecto del cambio climático. Sabemos que el clima está cambiando. Quizás es importante tener en cuenta esta variable para diseñar nuestra red de espacios protegidos. Usaremos una capa que muestra la estimación de la desviación de temperatura media anual (en décimas de grado) para la década de 2090 a 2100. Esta capa se ha obtenido a partir de la [REDIAM](https://www.juntadeandalucia.es/medioambiente/portal/acceso-rediam) y puedes descargla [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/temp_futuro.tif). 
+
+Ahora debemos de transformar las variables en criterios:
+
+### Mapa de diversidad -> Aptitud con relación a la biodiversidad.
+Asumiremos una relación directa entre variable y aptitud. Es decir, a más diversidad mejor para nuestros objetivos (identificar sitios potencialmente protegibles). Sabemos que los valores máximos y mínimos del mapa de diversidad son (podemos verlos fácilmente en las propiedades de la capa, en QGIS)
+
++ Mínimo: 0.008539155125618
++ Máximo: 6.4734792709351
++ Por tanto, la ecuación sería así:
+
+```python  
+  (1/(6.4734792709351-0.072917148470879))*"shannon@1" - (0.072917148470879/(6.4734792709351-0.072917148470879))
+```
+Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_shannon.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/apt_shannon.tif) puedes descargarlo. 
+
+### Distancia a zonas urbanas -> Aptitud con relación a la distancia a zonas urbanas.
+Asumiremos una relación directa entre variable y aptitud. Es decir, a más distancia mejor para nuestros objetivos (identificar sitios potencialmente protegibles). Justificamos esta afirmación diciendo que las zonas urbanas generan impactos importantes en los espacios protegidos y por tanto es mejor que estén lejos de ellas. Sabemos que los valores máximos y mínimos del mapa de distancias a zonas urbanas son (podemos verlos fácilmente en las propiedades de la capa, en QGIS)
+
++ Mínimo: 0
++ Máximo: 22983.689453125
++ Por tanto, la ecuación sería así:
+
+```python  
+  (1/(22983.689453125-0))*"dist_zona_urbana@1" - (0/(22983.689453125-0))
+```
+Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_dist_zona_urbana.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/apt_dist_zona_urbana.tif) puedes descargarlo. 
+
+### Distancia a la red viaria -> Aptitud con relación a la distancia a la red viaria.
+Asumiremos una relación inversa entre variable y aptitud. Es decir, a más distancia peor para nuestros objetivos (identificar sitios potencialmente protegibles). Justificamos esta afirmación diciendo que los espacios protegidos necesitan gestión y que para ello es importante que estén cerca de carreteras y caminos. Esto es muy cuestionable en realidad, pero lo hacemos así por fines docentes. Sabemos que los valores máximos y mínimos del mapa de distancias a carreteras son (podemos verlos fácilmente en las propiedades de la capa, en QGIS)
+
++ Mínimo: 0
++ Máximo: 17755.28125
++ Por tanto, la ecuación sería así:
+
+```python  
+ (1/(0-17755.28125))*"dist_red_viaria@1" - (17755.28125/(0-17755.28125))
+```
+Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_dist_red_viaria.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/apt_dist_red_viaria.tif) puedes descargarlo. 
+
+
+
+### Aumento previsto de temperatura -> Aptitud con relación al impacto del cambio climático
+
+Asumiremos una relación inversa entre variable y aptitud. Es decir, a más aumento de temperatura respecto a la media de la serie histórica, menos aptitud para nuestro objetivo. Justificamos esta decisión porque nos interesa que los espacios protegidos estén en lugares poco afectados por el cambio climático.  Sabemos que los valores máximos y mínimos del mapa de distancias a carreteras son (podemos verlos fácilmente en las propiedades de la capa, en QGIS)
+
++ Mínimo: 1.6337893009186
++ Máximo: 17755.28125
++ Por tanto, la ecuación sería así:
+
+```python  
+ (1/(1.7122367620468-4.7942304611206))*"temp_futuro@1" - (4.7942304611206/(1.7122367620468-4.7942304611206))
+```
+
+Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_temp_futuro.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/apt_temp_futuro.tif) puedes descargarlo. 
+
+Una vez que tenemos todos los criterios espacializados, podemos aplicar dos métodos para integrar las variables: evaluación multicriterio y operadores booleanos:
+
+### Evaluación multicriterio
+El proceso de integración se hace fácilmente con la calculadora de mapas de QGIS u operando con las capas raster en el caso de que trabajemos con R o con Python. El resultado final es la suma del producto de cada criterio (capa _apt_) por su peso. El valor relativo de cada peso nos da una idea del escenario decisional en el que nos encontramos. Por ejemplo, la siguiente combinación de pesos da mucha importancia a la diversidad y al escenario de cambio climático. Llamaremos al resultado de esta operación [*escenario_1.tif*](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/escenario_1.tif)
+
+```python  
+("apt_shannon@1" * 0.4)+("apt_temp_futuro@1"*0.4)+ ( "apt_dist_red_viaria@1"*0.1)+("apt_dist_zona_urbana@1"*0.1)
+ 
+```
+También podemos crear otro escenario quitando importancia al efecto del cambio climático. Llamaremos [*escenario_2.tif*](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/escenario_2.tif) a este resultado:
+
+```python  
+("apt_shannon@1" * 0.5)+("apt_temp_futuro@1"*0.1)+ ( "apt_dist_red_viaria@1"*0.2)+("apt_dist_zona_urbana@1"*0.2)
+ 
+```
+
+Uno de los problemas del análisis multicriterio es que ocurre una compensación de criterios. Si una variable tiene un valor muy alto en un lugar determinado, puede que el resultado final en ese punto sea alto aunque el valor de un criterio importante en ese punto sea bajo. Esto puede hacer que lugares no adecuados sean etiquetados como sí adecuados. Un ejemplo que ilustra esta situación: imaginemos que queremos montar un equipo de baloncesto. Un buen jugador de baloncesto ha de tener las siguientes características:
++ Altura.
++ Fortaleza en los brazos.
++ Tobillos resistentes.
+
+Si le damos distintos pesos a esas variables y con eso "puntuamos" la idoneidad de una lista de personas para entrar en nuestro equipo, puede darse la situación de que una persona tenga alta puntuación final aún teniendo los tobillos débiles. Eso implica tomar una decisión equivocada puesto que estaríamos incluyendo en el equipo a una persona que no rendiría bien. Esta situación denota que hay criterios que no solo tienen más peso que otros, sino que además deben satisfacerse **necesariamente** para tomar una decisión acertada. Y esto nos lleva a la segunda técnica de análisis de la decisión:
+
+### Operadores lógicos (o booleanos)
+Para aplicar estos operadores a nuestras capas, usamos la calculadora de mapas de QGIS en tres pasos anidados:
+
+Primero combinamos con el operador **o** la aptitud con relación a la diversidad y la vulnerabilidad al cambio climático:
+
+```py
+MAX ( "apt_shannon@1","apt_temp_futuro@1")
+```
+
+Al resultado le llamamos [*apt_shannon_o_apt_temp_futuro.tif*](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/apt_shannon_o_apt_temp_futuro.tif)
+
+Luego combinamos con el operador **o** la aptitud con relación a la distancia a núcleos urbanos y a vías de comunicación:
+
+```py
+MAX ("apt_dist_red_viaria@1","apt_dist_zona_urbana@1")
+```
+
+Al resultado le llamamos [*apt_dist_vias_o_apt_dist_nucleos.tif*](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/apt_dist_vias_o_apt_dist_nucleos.tif)
+
+Por último, combinamos los dos resultados parciales obtenidos anteriormente con el operador **y**:
+
+```py
+MIN("apt_dist_vias_o_apt_dist_nucleos@1","apt_shannon_o_apt_temp_futuro@1")
+```
+
+Al resultado le llamamos *[escenario_3.tif](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/main/geoinfo/escenario_3.tif)*
 
 ## Lecturas complementarias
 
