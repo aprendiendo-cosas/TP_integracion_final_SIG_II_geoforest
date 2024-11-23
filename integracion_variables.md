@@ -31,7 +31,7 @@ El siguiente esquema muestra las técnicas anteriores de manera más gráfica.
 
 
 
-![tipos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/refs/heads/2024_2025/imagenes/tipos_metodos.png)
+![tipos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/2024-2025/imagenes/tipos_metodos.png)
 
 
 
@@ -52,7 +52,7 @@ En las siguientes secciones se describen con más detalle los métodos anteriore
 
 El siguiente esquema muestra de manera resumida las distintas fases que hemos de cumplir para aplicar estas técnicas que permiten la superposición de variables y que están muy relacionadas con la teoría de la decisión.
 
-![pasos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/refs/heads/2024_2025/imagenes/esquema_metodo.png)
+![pasos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/2024-2025/imagenes/esquema_metodo.png)
 
 
 
@@ -68,7 +68,7 @@ Iniciamos un proceso colaborativo para construir un mapa conceptual que nos ayud
 
 El proceso de creación de un modelo conceptual se extiende a las siguientes fases. Vamos incorporando a dicho modelo elementos que nos ayudan a describir la transformación de la variable en criterio y la integración de dichos criterios mediante pesos u operadores booleanos. 
 
-El siguiente esquema muestra las tres versiones del modelo conceptual que hemos generado en clase. También se puede descargar [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/presentacion/modelo_conceptual_SIG_II.drawio.zip) en formato visible por [diagrams](https://app.diagrams.net/). :
+El siguiente esquema muestra las tres versiones del modelo conceptual que hemos generado en clase. También se puede descargar [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/presentacion/modelo_conceptual_SIG_II.drawio.zip) en formato visible por [diagrams](https://app.diagrams.net/). :
 
 <iframe frameborder="0" style="width:100%;height:1673px;" src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=modelo_conceptual_SIG_II.drawio#R%3Cmxfile%3E%3Cdiagram%20name%3D%22P%C3%A1gina-1%22%20id%3D%22wPEamW51zg6YCzW6ky2h%22%3E7R1bc6O2%2Btd4ZvchO4g7j7lsejrTbfc0PW3PU0cBxVGLERU4m%2ByvryQuBkmJSddGhvCSGCEwfPe7V87l5vE7CvP7TyRB6cq2kseVc7Wybcf3LfaPrzxVKzZoVtYUJ9Ua2C3c4K%2BoXmy2bXGCit7GkpC0xHl%2FMSZZhuKytwYpJV%2F62%2B5I2v%2FWHK6RsnATw1Rd%2FQ0n5X21GtrBbv0%2FCK%2Fvm28GflSd2cBmc%2F0mxT1MyJfOkvNx5VxSQsrq0%2BbxEqUceg1cquuunznbPhhFWTnkgii7DoH18BtYn9%2F88cfXs6fP8ObM9arbPMB0W79x%2FbTlUwMCSrZZgvhdwMq5%2BHKPS3STw5if%2FcKwztbuy01an65vh2iJHp99UNC%2BPiMcRDaopE9sS31B1JDIU0MKDQi%2FdDAQ1Gv3Xeg3i7DG%2Brq9%2BQ4w7EMNm9fAyTlBOAUSnOxAhZNnjwqnhi9OCU6ON4CebDf44KmQarn38JAKFUh9wjElcYo3UIEZe%2FuyDxiY4nXGPscMCoiyBQ4jzATXeX1ig5OEX66F8A4H1oGAHMrEaKlA9jW06BwNwCco2k6SEoEGTn7KyS3vQcv%2Fe8t11cUG0jVmFHbOzlr5o4AMU6xZefYAKYbsf7bdIIrjaktG6Aamml0IFuUZLNjnPRthyig8gyW3A7QbC2Y2nMHkz21RNjsy1Dn%2FF7scZ%2BvqHNyWpHOO5IJr%2BD2e23KHYLml6KxAZcn2PPcU4nFLTLJBG9n%2FnBSY73%2FurUqKyvj%2BhXeuTtl%2Bg4QUZ%2BisIRrtVXdwg9On6iTDKNxwGq%2Fx%2BuHmmq3%2BeCOvV5fHJCW0upCub%2BE7dvnlSjB599%2BH0Htf7ecS66wWUueCjiAtO6cq%2FuJnak7bERj%2FthQWRY%2FqctDd4K%2Fr%2F4JOb6m8whgh360dUJhSxAAPb8WtuOjMCc5K8aTexcq74vdixFMhR9yaYZH8hS4r6F3VhHmH01RaOoB0AW5fvHiOKlw0Etg9mgReBMsiWEYULK%2BXH5f26uI6Xl06qwtnQ9h1X0mG7xjaNqRgR8KZ5WfPAUWQ4%2B%2BO%2BZgw4R9z9tD1DpwxuZFgUjGrOEnJhjBe5qDjxxStUYYojHH1XRlbS1Bz9oGdLXvnOFOjB8zerNmDKMNps8G51su5hbkW5joZ5rokWYETRvQVL5UkEf9T8ZfCbF0tow3jJJiiQvBUgW%2FFxyNr8VFcIimM4aimfuBq1DE4mqGvxjA2MIdFI4uKLRLIkeBc3MOcf%2BSiLU3ZljVDKcc5ExbsuTig%2B%2Bc%2B707sc6nu8CNqgn4HcrGA0we7LigCdGaQfyywuwrYP1MU4xz3ZP60oS55%2F45xoKvO%2F6%2BKls0p07FCrfe1%2BLRR4VkSA4SmceEruLhB7BVxAhMhe%2BYEfcdzT0z8qBHZzxzSXEdOHdiuFE9zNTHHcYGtBnV%2FohzU85H0rt2HueeahnmkwPxnmOD5QLzNhTZUDkxDvHmADsh%2FYXY8s%2FWZx6UmLyYGb8lud33j4FYj9L8iWnQsGaDAfK4xziar02RQglBBji4zfLQsE9AFOSVcMHV7zksRdoDooEXndqJEKUrYC59uzlcDgGaNohSW%2BKF%2Fex1U6m%2F4zHHf8a76vOHLcC3IlsaovmgHWuU%2BobXnRiWkzFxXbiRw1L71N6BNl89fwmdL%2BGxJek1MIQCvTZc3siQwnPcCasRnES6LcDmh2PyJJr6WvNbCOyfPO28%2BrxUoCtdTPeSxU1uh6nUxJ%2BqmPiS0vCdrksH0425Vgsxuzw%2BE5DXo%2F2S881SHF2o%2BVCoC93tr7LmEX%2FSSzVCDtPJ7XnrTQI%2BcwY7dt5k2al5ljjlES3JPgWM%2B5qZmUeaXRgSWFN6xjEeXgZo%2FeSuZxEBuxGghbw4baoJlvrnEQG7wsIxLIUcT3ZyWno2G6tlncDOOnm3E3huAc%2FSNcBaXnlMKnzob6gjVC3Fs15KsWACAJeGtuuthA89qtnI26fhI7gEyr72bL3sxIV85ZQl%2BaHyydykPafy9ZaZV5eQxV%2B7vLRIuLD9cM9eea%2FtNFSJpIybCBKa95PP7js%2FX%2BYapo1quAmCGmwbVun6v46FazZLOqw7ABc6HQJZZmqrSkTlMTYDOqBYglGMdpwBxNXcplQOoRtpcsz%2BuLeEniAwXBNiqn%2F4JTrevVwn2mW%2FsdTSCnhmLXX8cM4uK8ozFSkyGWD2XjfjAFj9TcseAhjsOpIhireo2nCImVECL6%2FqrCaJw57a%2FaJfpArbHw6Eqw64wM6qyuAqjrJqAegw3OJt%2BRNGTTWPHuBpxNH0JO0%2FEehcTkRhk1nKx7mT4UhHsZWAumGtZCDOZby8pvIV%2FQs5qDOYVr7yfPNbkAJirC4CFGqyFR8OaGoC%2FwIR5FtwCqIJgOUVziYABVf2Yby1xdJF4kmzjfkSYqXsqhNkGJTzBKtIjsFIjUYqn7%2B4DOTzpaWRaWzE4DneowfofhRrB2R1PPnPMIP6nsgOErie3lKNGKP4S52TVTWW18u1ehJfEtVv%2BR%2BTKqzQzQ097EfsKJMRkvGVWQMkjWFO0GJgLofCdDrk6vjuazeBOPfbsDI2JukZjz44aoqx1PzOleV1DumtLF8UjtzitVc%2BGTzAqSc6kUxUa4yVFq7bkp6jukeAYMw%2BwUOztd%2FVajGnFWmldU1Qb6O859xV1TA6ma0JxWR1UTLrh8%2Bdga%2B7nO3OmvVlKsjUut8mqW4e0wQX3zXbfyLzZrjCv4d6%2BSVxXQlVmzqN4h6fmYvaCMXzgADljHx%2FQYwWb6ckAoMgAoHH9HJ2AP54MUH2%2Fy1%2B%2Br83VnMOA85cgQJjf41iI%2FgQ9vlerZn9DJaPBotkxeW3sRQq%2BrNBTbSVdNOR4vc%2Bqk%2FGxYDQtuI6HRSbIGEpxiK7tcNSIiKtapDso45lAGTR6yRiUT3C2IXD7LO84JzArU63RMA8nT4KTzlcZeVamq9pZ5uEk0ZNtRRqzf%2BwJhU1ucSazMoGUxdMOCRhVtHm6GZCmSdGRoORoGnHHJ0V7P6Rm1O8ph619OXQzuOFTDhYpdzpyx6e3dHwujSVLx%2BcMcv5MXcqObmAbbvn0lpbPRbqcdNva0vK58M7CO8dVwAvRLkR7MkT7wH%2FDqJugrjTAf7eIolrkZzyhR0U272uvmqdAO0Euct63WPx74iKc7I733AEVdblD1tELWcJvsIFN0qxE2Rp2s3iYG6cPKMNC6YivSXnucFEVC9edPNctqmIh2skR7Y%2BN9E1qQdypmcYJc8uFn6AY9I3Er3bnhEnyGMNdI5TqCCycsHDCSXPCIr4Xop0c0b75iURAGksKgiYe2y188mxblys83lCipuZgsgWrXl1XtLdgtZq4aKpg1VPLn%2BY4lCiUS1iMd0IAa0DdwMRIPhhI8nUtrDGa1%2Fysw%2FzGQUV9ub77lVlzvyujFre9lXFQtly2FASa8uJxf%2FrBiLhBj7j8vfP5%2F%2FxWzLSojq4e6zuLg6fmIGPv%2B3v3oHMVP9xdJo6a6w4p2oa2n0RG2088tSxyviO%2B2pLTxnKNdHNUxv21JmviKty3B9K5H5qkc1%2F90Y6ZwrlSE98AZ3Hpa0d8MeaSyoQcd4wJXw1Y5jjhC%2Fhyu4HxCV%2B%2BWte5TPg6hLUHJGtPO%2Fxz1AlfkTr7YOoi1B1qkrlGVZVa3Tiv0Wq2Fcqj1WzdnKOxwyvzI%2FihY86BZZbiVcjPaKodCORWYds1Hkz01SiuNNbOUeA%2B1xJ3IClfEOl%2BPXzMDjFfjTdOeawd8BUO0P2Q6ahNeL4aWlzm2r2AQ8ca4oyMOtbOV2NXsx5r5yps5FjGFUnzAMtgu%2BfxpsxNdYCmu3bc0XaBmkyc8Wg7V25v9o2HUgJN5OotDrZzNd5gpIl%2BjDvbLlADXctsu39hNSgjvR1PN%2BNi1NF2gasAclp%2BfTDUrw98PXbGcesD1a1fRtu9udF2TqSIAN0Ir3En2wVq%2BGOZbFfFOZQhwI5jfLBdoMZDJj%2FYTi4w9DUuwagRkUCNiEx%2Brp0MZNf0WLtw6nUIwdC6ptBoxWagxoa%2Bu%2Fj%2B%2BlnpHD%2BlXHxTZ7%2FQva2w8cNtuwDjv9YCRz9tS971UK830WzvMMQcyS6sJkqto%2BWj%2BUihPXFabiCz3442WqMXqiG2S2YDo9bsTdqossUf4hrwP7bq5dB7srndFvtJ%2FADUaruORK66WZmjkquRBpETKEUNnaEi22gWOFRDLj9%2FvPr%2B%2FNOUhbYtV3H7qi09rtBWq0uuEDPz6Fo445%2F%2Bd%2Fnree2FMn85RoVYFuGqbIuKUvjvvBfZqHQBdrgfruNKF9%2BsdPlgRUFfwnC37WUZI4467ubBBc%2FQgivPaG1wGL1VxTC0%2FSo0ix%2FV%2B%2F%2FhPEt4FmTCmqFpPXgp5zGqZmji8m%2BPDcKBbFCl7IyxgRqf%2Be7jR025dQzTeFvF1uuK6kcsots8Ll0gnopf9TvU%2BQlUxgNrq0dV9Er0WMsoo6r6KHijjBKBgYwSGc07NY%2FZYRSpu6DYtbhVeVcxcrNOTlVmLk8jkVuGEvxANDxGlVoxXjgBT5CDAqXpTVf6MGpyPTJicB2SEQZ3Ehg1nCLV15MYgUqNBQ0rPDtNapIs4Enj8Het7sZUiJp%2FPM%2FLOp9MUZGjuOQSqCqV60usZ0zeieQXw0gutjbegwusAb8NMzEBNdSkBZZZCaXatC%2FzgSywJs4MsmA6hTYotfFjWrTf%2Fm7iAOI36tC1D9ql%2Fr5%2BzjVTZnr6%2B1%2Fo6bap4fT0tPQDOLbu56dH1dM1hbxCQOkwNnEhJUeqzM8FAtZbdcHrTs1Bws2oE94%2B6PPOR9nt8Zyp5yFLNFdT5TWuRGs8fWOJKq%2FLPGAP6%2Fyb6U8HZTd7NENaXPrauSugLVVrKWyMsSu1cHmFXizn09AdujLIjXfhATB1j7XmnyGcBoxWY7UP2p2BY1TJAGVyo62x0EbWMmoM%2FnWO%2FfX8DGngyJa0rYlDHkpwsENK%2BOTqndznvQyfeGsLW%2FwH%3C%2Fdiagram%3E%3C%2Fmxfile%3E"></iframe>
 
@@ -84,7 +84,7 @@ Pero cuando aplicamos a la variable un cierto criterio decisional debemos de tra
 
 La función de transformación puede tener formas diferentes. En la siguiente figura se muestran algunos ejemplos:
 
-![tipos_funciones](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/refs/heads/2024_2025/imagenes/estandarizacion.jpg)
+![tipos_funciones](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/2024-2025/imagenes/estandarizacion.jpg)
 
 
 
@@ -92,7 +92,7 @@ En nuestro caso asumiremos que la relación entre cada variable y su criterio es
 
 
 
-![pertenencia](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/refs/heads/2024_2025/imagenes/funcion_pertenencia_lineal.png)
+![pertenencia](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/2024-2025/imagenes/funcion_pertenencia_lineal.png)
 
 En los dibujos anteriores también puedes ver cómo calcular los parámetros de las funciones. Dado que una recta está definida por dos puntos, es fácil despejar los parámetros de la ecuación de la recta (pendiente y ordenada en el origen) a partir de los valores extremos (que toman valores 0 y 1 en el mapa de idoneidad).
 
@@ -126,7 +126,7 @@ El proceso de integración se hace fácilmente con la calculadora de mapas de QG
 ```
 La siguiente imagen muestra el método con otro ejemplo diferente:
 
-![pesos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/2024_2025/imagenes/pesos_ponderados.png)
+![pesos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/2024-2025/imagenes/pesos_ponderados.png)
 
 Uno de los problemas del análisis multicriterio es que ocurre una compensación de criterios. Si una variable tiene un valor muy alto en un lugar determinado, puede que el resultado final en ese punto sea alto aunque el valor de un criterio importante en ese punto sea bajo. Esto puede hacer que lugares no adecuados sean etiquetados como sí adecuados. Un ejemplo que ilustra esta situación: imaginemos que queremos montar un equipo de baloncesto. Un buen jugador de baloncesto ha de tener las siguientes características:
 + Altura.
@@ -151,13 +151,13 @@ Para implementar esta operación en un SIG, usamos dos operadores matemáticos m
 
 La siguiente figura muestra el funcionamiento de estos operadores:
 
-![booleanos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/2024_2025/imagenes/operadores_booleanos.png)
+![booleanos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/2024-2025/imagenes/operadores_booleanos.png)
 
 Para aplicar estos operadores a nuestras capas, puedes la calculadora de mapas de QGIS (funciones MIN y MAX). 
 
 Los operadores anteriores son un poco "rígidos" dado que solo seleccionan los valores extremos (mínimo o máximo). Para suavizar el resultado se pueden usar otros operadores como los mostrados en la siguiente figura:
 
-![difusos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/2024_2025/imagenes/operadores_difusos.png)
+![difusos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/2024-2025/imagenes/operadores_difusos.png)
 
 
 
@@ -188,7 +188,7 @@ En nuestro caso la agrupación de las variables tiene consecuencias espaciales p
 
 El siguiente esquema muestra gráficamente la filosofía de esta técnica. No obstante, hay mucha información disponible en internet. Basta con buscar *K-means* (que es una de las técnicas más comunes) o clasificación supervisada.
 
-![tipos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/refs/heads/2024_2025/imagenes/clustering.png)
+![tipos](https://raw.githubusercontent.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/2024-2025/imagenes/clustering.png)
 
 A la izquierda se representan dos variables espacializadas (abajo) y el valor de una serie de puntos (numerados del 1 al 10) en función de las dos variables (gráfica superior izquierda). La clasificación consiste en construir grupos de puntos que tienen unas caracteríticas parecidas desde el punto de vista de las dos variables consideradas. Esta clasificación implica establecer similitudes entre los puntos (gráfica de arriba a la derecha). Además, esa clasificación se traduce en un mapa que muestra la distribución de las zonas homogéneas. Para cada conjunto de puntos se pueden definir un número ilimitado de agrupaciones diferentes. Las técnicas utilizadas para hacer la agrupación permiten seleccionar la más adecuada usando criterios estadísticos.
 
@@ -211,10 +211,10 @@ Así que para decidir qué lugares son más adecuados para albergar un espacio p
 
 En la sesión anterior se identificaron una serie de variables potencialmente útiles para responder a la pregunta que nos ocupa. Estas variables se identificaron basándose en el criterio experto de los estudiantes y de la profesora Cristina:
 
-+ Diversidad. La diversidad biológica es importante para considerar una zona como potencialmente protegible. Se supone que es esa diversidad la que queremos proteger. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/shannon.tif) puedes descargar el mapa de diversidad de Andalucía. 
-+ Distancia a zonas urbanas. La distancia entre la zona protegida y los núcleos urbanos también es importante porque esto puede condicionar los posibles impactos al espacio protegido o el uso que se hace de este. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/dist_zona_urbana.tif) puedes descargar el mapa de distancias de cada punto de Andalucía a la zona urbana más cercana. 
-+ Distancia a vías de comunicación. Igualmente, lo bien o mal comunicado que esté un espacio protegido condiciona tanto los impactos potenciales de la actividad humana como su posible uso por parte de la sociedad. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/dist_red_viaria.tif) puedes descargar el mapa de distancias de cada punto de Andalucía a la carretera más cercana. 
-+ Efecto del cambio climático. Sabemos que el clima está cambiando. Quizás es importante tener en cuenta esta variable para diseñar nuestra red de espacios protegidos. Usaremos una capa que muestra la estimación de la desviación de temperatura media anual (en décimas de grado) para la década de 2090 a 2100. Esta capa se ha obtenido a partir de la [REDIAM](https://www.juntadeandalucia.es/medioambiente/portal/acceso-rediam) y puedes descargla [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/temp_futuro.tif). 
++ Diversidad. La diversidad biológica es importante para considerar una zona como potencialmente protegible. Se supone que es esa diversidad la que queremos proteger. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/geoinfo/shannon.tif) puedes descargar el mapa de diversidad de Andalucía. 
++ Distancia a zonas urbanas. La distancia entre la zona protegida y los núcleos urbanos también es importante porque esto puede condicionar los posibles impactos al espacio protegido o el uso que se hace de este. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/geoinfo/dist_zona_urbana.tif) puedes descargar el mapa de distancias de cada punto de Andalucía a la zona urbana más cercana. 
++ Distancia a vías de comunicación. Igualmente, lo bien o mal comunicado que esté un espacio protegido condiciona tanto los impactos potenciales de la actividad humana como su posible uso por parte de la sociedad. [Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/geoinfo/dist_red_viaria.tif) puedes descargar el mapa de distancias de cada punto de Andalucía a la carretera más cercana. 
++ Efecto del cambio climático. Sabemos que el clima está cambiando. Quizás es importante tener en cuenta esta variable para diseñar nuestra red de espacios protegidos. Usaremos una capa que muestra la estimación de la desviación de temperatura media anual (en décimas de grado) para la década de 2090 a 2100. Esta capa se ha obtenido a partir de la [REDIAM](https://www.juntadeandalucia.es/medioambiente/portal/acceso-rediam) y puedes descargla [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/geoinfo/temp_futuro.tif). 
 
 Ahora debemos de transformar las variables en criterios:
 
@@ -228,7 +228,7 @@ Asumiremos una relación directa entre variable y aptitud. Es decir, a más dive
 ```python  
   (1/(6.4734792709351-0.072917148470879))*"shannon@1" - (0.072917148470879/(6.4734792709351-0.072917148470879))
 ```
-Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_shannon.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/apt_shannon.tif) puedes descargarlo. 
+Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_shannon.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024-2025/geoinfo/apt_shannon.tif) puedes descargarlo. 
 
 #### Distancia a zonas urbanas -> Aptitud con relación a la distancia a zonas urbanas.
 Asumiremos una relación directa entre variable y aptitud. Es decir, a más distancia mejor para nuestros objetivos (identificar sitios potencialmente protegibles). Justificamos esta afirmación diciendo que las zonas urbanas generan impactos importantes en los espacios protegidos y por tanto es mejor que estén lejos de ellas. Sabemos que los valores máximos y mínimos del mapa de distancias a zonas urbanas son (podemos verlos fácilmente en las propiedades de la capa, en QGIS)
@@ -240,7 +240,7 @@ Asumiremos una relación directa entre variable y aptitud. Es decir, a más dist
 ```python  
   (1/(22983.689453125-0))*"dist_zona_urbana@1" - (0/(22983.689453125-0))
 ```
-Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_dist_zona_urbana.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/apt_dist_zona_urbana.tif) puedes descargarlo. 
+Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_dist_zona_urbana.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/geoinfo/apt_dist_zona_urbana.tif) puedes descargarlo. 
 
 #### Distancia a la red viaria -> Aptitud con relación a la distancia a la red viaria.
 Asumiremos una relación inversa entre variable y aptitud. Es decir, a más distancia peor para nuestros objetivos (identificar sitios potencialmente protegibles). Justificamos esta afirmación diciendo que los espacios protegidos necesitan gestión y que para ello es importante que estén cerca de carreteras y caminos. Esto es muy cuestionable en realidad, pero lo hacemos así por fines docentes. Sabemos que los valores máximos y mínimos del mapa de distancias a carreteras son (podemos verlos fácilmente en las propiedades de la capa, en QGIS)
@@ -252,7 +252,7 @@ Asumiremos una relación inversa entre variable y aptitud. Es decir, a más dist
 ```python  
  (1/(0-17755.28125))*"dist_red_viaria@1" - (17755.28125/(0-17755.28125))
 ```
-Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_dist_red_viaria.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/apt_dist_red_viaria.tif) puedes descargarlo. 
+Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_dist_red_viaria.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/geoinfo/apt_dist_red_viaria.tif) puedes descargarlo. 
 
 
 
@@ -268,18 +268,18 @@ Asumiremos una relación inversa entre variable y aptitud. Es decir, a más aume
  (1/(1.7122367620468-4.7942304611206))*"temp_futuro@1" - (4.7942304611206/(1.7122367620468-4.7942304611206))
 ```
 
-Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_temp_futuro.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/apt_temp_futuro.tif) puedes descargarlo. 
+Para aplicar esta función lineal basta con poner el código anterior en la calculadora raster de QGIS. El resultado debe de llamarse *apt_temp_futuro.tif*. Si no consigues hacerlo, [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/geoinfo/apt_temp_futuro.tif) puedes descargarlo. 
 
 Una vez que tenemos todos los criterios espacializados, podemos aplicar dos métodos para integrar las variables: evaluación multicriterio y operadores booleanos:
 
 ### Evaluación multicriterio
-El proceso de integración se hace fácilmente con la calculadora de mapas de QGIS u operando con las capas raster en el caso de que trabajemos con R o con Python. El resultado final es la suma del producto de cada criterio (capa _apt_) por su peso. El valor relativo de cada peso nos da una idea del escenario decisional en el que nos encontramos. Por ejemplo, la siguiente combinación de pesos da mucha importancia a la diversidad y al escenario de cambio climático. Llamaremos al resultado de esta operación [*escenario_1.tif*](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/escenario_1.tif)
+El proceso de integración se hace fácilmente con la calculadora de mapas de QGIS u operando con las capas raster en el caso de que trabajemos con R o con Python. El resultado final es la suma del producto de cada criterio (capa _apt_) por su peso. El valor relativo de cada peso nos da una idea del escenario decisional en el que nos encontramos. Por ejemplo, la siguiente combinación de pesos da mucha importancia a la diversidad y al escenario de cambio climático. Llamaremos al resultado de esta operación [*escenario_1.tif*](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/geoinfo/escenario_1.tif)
 
 ```python  
 ("apt_shannon@1" * 0.4)+("apt_temp_futuro@1"*0.4)+ ( "apt_dist_red_viaria@1"*0.1)+("apt_dist_zona_urbana@1"*0.1)
  
 ```
-También podemos crear otro escenario quitando importancia al efecto del cambio climático. Llamaremos [*escenario_2.tif*](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/escenario_2.tif) a este resultado:
+También podemos crear otro escenario quitando importancia al efecto del cambio climático. Llamaremos [*escenario_2.tif*](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/geoinfo/escenario_2.tif) a este resultado:
 
 ```python  
 ("apt_shannon@1" * 0.5)+("apt_temp_futuro@1"*0.1)+ ( "apt_dist_red_viaria@1"*0.2)+("apt_dist_zona_urbana@1"*0.2)
@@ -302,7 +302,7 @@ Primero combinamos con el operador **o** la aptitud con relación a la diversida
 MAX ( "apt_shannon@1","apt_temp_futuro@1")
 ```
 
-Al resultado le llamamos [*apt_shannon_o_apt_temp_futuro.tif*](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/apt_shannon_o_apt_temp_futuro.tif)
+Al resultado le llamamos [*apt_shannon_o_apt_temp_futuro.tif*](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/geoinfo/apt_shannon_o_apt_temp_futuro.tif)
 
 Luego combinamos con el operador **o** la aptitud con relación a la distancia a núcleos urbanos y a vías de comunicación:
 
@@ -310,7 +310,7 @@ Luego combinamos con el operador **o** la aptitud con relación a la distancia a
 MAX ("apt_dist_red_viaria@1","apt_dist_zona_urbana@1")
 ```
 
-Al resultado le llamamos [*apt_dist_vias_o_apt_dist_nucleos.tif*](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/apt_dist_vias_o_apt_dist_nucleos.tif)
+Al resultado le llamamos [*apt_dist_vias_o_apt_dist_nucleos.tif*](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/geoinfo/apt_dist_vias_o_apt_dist_nucleos.tif)
 
 Por último, combinamos los dos resultados parciales obtenidos anteriormente con el operador **y**:
 
@@ -318,7 +318,7 @@ Por último, combinamos los dos resultados parciales obtenidos anteriormente con
 MIN("apt_dist_vias_o_apt_dist_nucleos@1","apt_shannon_o_apt_temp_futuro@1")
 ```
 
-Al resultado le llamamos *[escenario_3.tif](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/refs/heads/2024_2025/geoinfo/escenario_3.tif)*
+Al resultado le llamamos *[escenario_3.tif](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/geoinfo/escenario_3.tif)*
 
 
 
@@ -326,13 +326,13 @@ Al resultado le llamamos *[escenario_3.tif](https://github.com/aprendiendo-cosas
 
 Además de lo visto anteriormente, os paso la siguiente información que puede resultar de utilidad:
 
-+ [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024_2025/biblio/modelos_ecologicos.pdf) que describe distintos tipos de modelos ecológicos. Incide en alguno de los conceptos descritos en la sesión final de nuestra asignatura. 
-+ [Resumen](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024_2025/biblio/herramientas_apoyo_decisiones.pdf) de mi tesis (año 2003, no os riais de los esquemas, por favor. En esa época no existía R ni siquiera QGIS). En el texto se describen los conceptos generales sobre integración de información ambiental usando técnicas de operadores booleanos. He recortado solo la parte interesante. Eso hace que el texto no sea muy fluido porque faltan secciones.
++ [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/biblio/modelos_ecologicos.pdf) que describe distintos tipos de modelos ecológicos. Incide en alguno de los conceptos descritos en la sesión final de nuestra asignatura. 
++ [Resumen](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/biblio/herramientas_apoyo_decisiones.pdf) de mi tesis (año 2003, no os riais de los esquemas, por favor. En esa época no existía R ni siquiera QGIS). En el texto se describen los conceptos generales sobre integración de información ambiental usando técnicas de operadores booleanos. He recortado solo la parte interesante. Eso hace que el texto no sea muy fluido porque faltan secciones.
 + Varios textos sobre análisis multicriterio:
-  + [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024_2025/biblio/multicriterio_seleccion_zonas_plantas_electricas.pdf) sobre el uso del análisis multicriterio para localizar plantas de producción fotovoltaica. 
-  + [Interesante](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024_2025/biblio/MCE_review.pdf) revisión del uso de las técnicas multicriterio en cuestiones de conservación de la naturaleza. Muy recomendable este trabajo.
-  + [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024_2025/biblio/ecological_corridors_multicriteria.pdf) que describe cómo la conectividad ecológica del paisaje usando evaluación multicriterio.
-  + [Informe](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024_2025/biblio/Memoria_Apicola_2004.pdf) de la REDIAM que describe cómo se hizo el mapa de aprovechamientos apícolas de Andalucía usando la técnica de la evaluación multicriterio. 
+  + [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/biblio/multicriterio_seleccion_zonas_plantas_electricas.pdf) sobre el uso del análisis multicriterio para localizar plantas de producción fotovoltaica. 
+  + [Interesante](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/biblio/MCE_review.pdf) revisión del uso de las técnicas multicriterio en cuestiones de conservación de la naturaleza. Muy recomendable este trabajo.
+  + [Artículo](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/biblio/ecological_corridors_multicriteria.pdf) que describe cómo la conectividad ecológica del paisaje usando evaluación multicriterio.
+  + [Informe](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/raw/2024-2025/biblio/Memoria_Apicola_2004.pdf) de la REDIAM que describe cómo se hizo el mapa de aprovechamientos apícolas de Andalucía usando la técnica de la evaluación multicriterio. 
 + [Manual](https://geodacenter.github.io/workbook/9a_spatial1/lab9a.html) interesante sobre el uso de la clasificación espacialmente explícita.
 
 
@@ -346,7 +346,7 @@ Además de lo visto anteriormente, os paso la siguiente información que puede r
 
 ****
 
-[Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/archive/refs/tags/2024_2025.zip) puedes descargar un archivo .zip que contiene este guión en formato html y todo el material que incluye.
+[Aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/archive/refs/tags/2024-2025.zip) puedes descargar un archivo .zip que contiene este guión en formato html y todo el material que incluye.
 
 ****
 Haz click [aquí](https://github.com/aprendiendo-cosas/TP_integracion_final_SIG_II_geoforest/releases) para ver cómo ha cambiado este guión en los distintos cursos académicos.
