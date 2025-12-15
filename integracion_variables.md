@@ -348,9 +348,6 @@ Además de lo visto anteriormente, os paso la siguiente información que puede r
 + [Manual](https://geodacenter.github.io/workbook/9a_spatial1/lab9a.html) interesante sobre el uso de la clasificación espacialmente explícita.
 
 
-## Vídeo de la sesión
-
-<iframe width="560" height="515" src="https://www.youtube.com/embed/4KgzEq73a6Y?si=uUgwBiKiuqgMc119" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 
